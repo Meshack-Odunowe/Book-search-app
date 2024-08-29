@@ -86,7 +86,7 @@ const FeaturedBooks: React.FC = () => {
 
   return (
     <div className="mt-20 px-4">
-      <h2 className="text-3xl font-serif font-bold text-[#3e2f1c] mb-8 text-center">Featured Books</h2>
+      <h2 className="text-3xl font-serif font-bold text-[#3e2f1c] mb-8 text-center">Discover New Reads</h2>
 
       <SearchBar search={search} setSearch={setSearch} onSearch={handleSearch} />
 
