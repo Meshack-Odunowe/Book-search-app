@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Book as BookIcon } from 'lucide-react';
 import BookCard from './BookCard';
 import SearchBar from './SearchBar';
+import GoBackButton from './GoBackButton';
 
 interface VolumeInfo {
   title: string;
@@ -85,11 +86,12 @@ const FeaturedBooks: React.FC = () => {
   };
 
   return (
-    <div className="mt-20 px-4">
+    <div className="mt-20 px-4 max-w-5xl mx-auto">
+      
       <h2 className="text-3xl font-serif font-bold text-[#3e2f1c] mb-8 text-center">Discover New Reads</h2>
 
       <SearchBar search={search} setSearch={setSearch} onSearch={handleSearch} />
-
+      <GoBackButton />
       {error && (
         <div className="flex flex-col items-center justify-center mt-8 animate-fade-in">
           <BookIcon size={64} className="text-[#8b7b58] mb-4" />

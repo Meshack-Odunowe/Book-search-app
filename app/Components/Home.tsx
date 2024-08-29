@@ -68,9 +68,8 @@ const HeroSection: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Featured Books */}
       </div>
-        <FeaturedBooks />
+       
     </div>
   );
 };
