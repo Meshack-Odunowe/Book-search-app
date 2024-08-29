@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import { Book as BookIcon } from 'lucide-react';
-import { notFound } from 'next/navigation';
+import { Book as BookIcon, ArrowLeft } from 'lucide-react';
+import { notFound, useRouter } from 'next/navigation';
 import Link from 'next/link';
-
+import GoBackButton from '@/app/Components/GoBackButton'
 async function getBookDetails(id: string) {
   try {
     const response = await axios.get(`https://www.googleapis.com/books/v1/volumes/${id}`);
@@ -26,6 +26,7 @@ export default async function BookDetails({ params }: { params: { id: string } }
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12">
+      <GoBackButton />
       <div className="bg-[#f4e4c1] border border-[#c2b280] rounded-lg shadow-lg overflow-hidden transition hover:shadow-2xl">
         {/* Image Section */}
         <div className="">
@@ -35,14 +36,13 @@ export default async function BookDetails({ params }: { params: { id: string } }
               alt={`Cover of ${book.volumeInfo.title}`}
               width={200}
               height={300}
-              className="relative  h-80 shadow-lg py-2 px-2 rounded-t-lg border-b  bg-[#f5f1e6] transform hover:rotate-1 hover:scale-105  mx-auto transition-transform duration-300 border-4 border-[#e6d4b8] "
+              className="relative h-80 shadow-lg py-2 px-2 rounded-t-lg border-b bg-[#f5f1e6] transform hover:rotate-1 hover:scale-105 mx-auto transition-transform duration-300 border-4 border-[#e6d4b8]"
             />
           ) : (
             <div className="flex items-center justify-center h-full bg-[#d8c4a0]">
               <BookIcon size={56} className="text-[#8b7b58]" />
             </div>
           )}
-          
         </div>
 
         {/* Content Section */}
@@ -86,3 +86,4 @@ export default async function BookDetails({ params }: { params: { id: string } }
     </div>
   );
 }
+
