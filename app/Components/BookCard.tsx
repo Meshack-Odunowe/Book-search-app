@@ -22,10 +22,10 @@ interface BookCardProps {
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => (
-  <Link href={`/books/${book.id}`} className="block">
-    <div className="bg-[#f3f2ee] border border-[#c2b280] rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <div className="flex">
-        <div className="relative h-48 w-1/3">
+  <Link href={`/books/${book.id}`} className="block rounded-md">
+    <div className="bg-[#f3f2ee] border border-[#c2b280] rounded-[10px] shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <div className="flex rounded-md">
+        <div className="relative rounded-md h-48 w-1/3">
           {book.volumeInfo.imageLinks ? (
             <Image
               src={book.volumeInfo.imageLinks.thumbnail}
@@ -40,7 +40,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => (
             </div>
           )}
         </div>
-        <div className="p-4 w-2/3 bg-[#faf3e0] flex flex-col justify-between">
+        <div className="p-4 w-2/3 bg-[#faf3e0] flex flex-col justify-between rounded-md">
           <div>
             <h3 className="text-lg font-serif font-bold text-[#3e2f1c] mb-2 line-clamp-2">
               {book.volumeInfo.title}
@@ -56,7 +56,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => (
               </p>
             )}
           </div>
-          <span className="inline-block mt-auto px-4 py-2 bg-[#8b7b58] text-white text-sm font-semibold rounded-md transition-colors hover:bg-[#6b5a43]">
+          <span className="inline-block mt-auto px-4 py-2 bg-[#8b7b58] text-white text-sm w-fit font-semibold rounded-[10px] transition-colors  hover:bg-[#6b5a43]">
             View Details
           </span>
         </div>

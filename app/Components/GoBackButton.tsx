@@ -9,10 +9,10 @@ export default function GoBackButton() {
   return (
     <button
       onClick={() => router.back()}
-      className="mb-6 flex items-center text-[#6b4f2b] hover:text-[#3e2f1c] transition-colors"
+      className="mb-6 flex items-center text-[#6b4f2b] hover:text-[#3e2f1c] transition-colors border rounded-[10px] p-2  border-[#6b4f2b]"
     >
       <ArrowLeft size={20} className="mr-2" />
-      <span>Go Back</span>
+      <span> Back</span>
     </button>
   );
 }

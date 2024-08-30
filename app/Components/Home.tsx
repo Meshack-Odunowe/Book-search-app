@@ -27,8 +27,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-screen">
-        {/* Navigation */}
-        <Navbar />
+        
 
         {/* Hero Content with Framer Motion */}
         <motion.div
